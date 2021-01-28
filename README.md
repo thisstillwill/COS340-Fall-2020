@@ -4,7 +4,7 @@ This repository contains my assignment submissions for [COS 340 Reasoning About 
 
 ## Contents
 
-* `Assignments` - Directory containing the source files for each assignment. Individual problem sets are located in separate problem sets and denoted using the number of the assignment:
+* `Assignments` - Directory containing the source files for each assignment. Individual problem sets are located in subfolders and denoted using the number of the assignment:
 
 ```
 .
