@@ -1,0 +1,37 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{2}            % Homework
+           {6}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 6:}\\
+We wish to show that $E_1$ and $E_2$ are conditionally independent given $E_3$ and that
+$$Pr[E_1\cap E_2|E_3]=Pr[E_1|E_3]\cdot Pr[E_2|E_3]$$
+We first note that 
+if $P(A)>0$ we have that $P(B|A)=P(B)$ are independent. We now have that
+$$Pr[E_1\cap E_2|E_3]=Pr[E_1]\cdot Pr[E_2]$$
+We are given that $E_1$, $E_2$, $E_3$ are mutually independent, so we now have that
+$$Pr[E_1\cap E_2]=Pr[E_1]\cdot Pr[E_2]$$
+The intersection of two mutually independent events is just their product, so we have that
+$$Pr[E_1]\cdot Pr[E_2]=Pr[E_1]\cdot Pr[E_2]$$
+We have successfully shown that $E_1$ and $E_2$ are conditionally independent given $E_3$.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

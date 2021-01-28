@@ -1,0 +1,37 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{3}            % Homework
+           {3}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3:}\\
+We wish to show that any simple graph $G=(V,E)$ with $\delta(G)>\frac{1}{2}\cdot(\abs{V}-2)$ is 
+connected.\\\\
+We can partition $G$ into two subgraphs with $\frac{\abs{V}}{2}$ vertices each. If we take 
+any vertex $v$ from either of the subgraphs, the maximum degree it could have is 
+$\frac{\abs{V}}{2}-1$ since it could be connected to every vertex in the subgraph besides 
+itself (creating a connected component). There could not be more edges from the vertex because in a 
+simple graph self loops and multiple edges are not allowed. However, it is given that 
+$\delta(G)>\frac{1}{2}\cdot(\abs{V}-2)=\frac{\abs{V}}{2}-1$, so there must actually be one additional edge 
+from $v$ to the other connected component. Therefore, the graph $G$ must actually be connected.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

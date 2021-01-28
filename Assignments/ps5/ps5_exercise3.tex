@@ -1,0 +1,58 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{5}            % Homework
+           {3}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3:}\\
+\noindent\textbf{(A)} Compute $3^n \mod{11}$ for $n=1,2, \dots ,10$.
+\begin{itemize}
+\item $3^1 \mod{11} = 3$ 
+\item $3^2 \mod{11} = 9$ 
+\item $3^3 \mod{11} = 27 \mod{11} = 5$
+\item $3^4 \mod{11} = (3^3 \mod{11} \cdot 3^1 \mod{11}) \mod{11} = (5 \cdot 3) \mod{11} = 4$
+\item $3^5 \mod{11} = (3^4 \mod{11} \cdot 3^1 \mod{11}) \mod{11} = (4 \cdot 3) \mod{11} = 1$
+\item $3^6 \mod{11} = (3^5 \mod{11} \cdot 3^1 \mod{11}) \mod{11} = (1 \cdot 3) \mod{11} = 3$
+\item $3^7 \mod{11} = (3^6 \mod{11} \cdot 3^1 \mod{11}) \mod{11} = (3 \cdot 3) \mod{11} = 9$
+\item $3^8 \mod{11} = (3^4 \mod{11} \cdot 3^4 \mod{11}) \mod{11} = (4 \cdot 4) \mod{11} = 5$
+\item $3^9 \mod{11} = (3^8 \mod{11} \cdot 3^1 \mod{11}) \mod{11} = (5 \cdot 3) \mod{11} = 4$
+\item Because 11 is a prime, and $10=11-1$, by Fermat’s Little Theorem $3^{10} \mod{11} = 1$
+\end{itemize}
+\noindent\textbf{(B)} Compute $3^{2324238942348721381245} \mod{11}$.
+\begin{align}
+	&= (3^{2324238942348721381240} \mod{11} \cdot 3^5 \mod{11}) \mod{11}\\
+	&= ((3^{10} \mod{11})^{232423894234872138124} \cdot 3^5 \mod{11}) \mod{11}\\
+	&= (1^{232423894234872138124} \mod{11} \cdot 1) \mod{11}\\
+	&= 1
+\end{align}
+\noindent\textbf{(C)} Compute $15^{3248723482156246732128312537123} \pmod{11}$.
+\begin{align}
+	&= (3 \cdot 5)^{3 \dots 3} \bmod{11}\\
+	&= (3^{3 \dots 3} \bmod{11} \cdot 5^{3 \dots 3} \bmod{11}) \bmod{11}\\
+	&= ((3^{3 \dots 0} \bmod{11} \cdot 3^3 \bmod{11}) \cdot (5^{3 \dots 0} \bmod{11} \cdot 5^3 \bmod{11})) \bmod{11}\\
+	&= (((3^{10} \bmod{11})^{3 \dots} \bmod{11} \cdot 3^3 \bmod{11}) \cdot ((5^{10} \bmod{11})^{3 \dots} \bmod{11} \cdot 5^3 \bmod{11})) \bmod{11}\\
+	&= ((1 \bmod{11} \cdot 5 \bmod{11}) \cdot (1 \bmod{11} \cdot 4 \bmod{11}))\\
+	&= (5 \cdot 4) \bmod{11}\\
+	&= 9\\
+\end{align}
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

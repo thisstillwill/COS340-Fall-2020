@@ -1,0 +1,60 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{4}            % Homework
+           {4}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4:}\\
+\noindent\textbf{(A):} We wish to show that the expected number of cycles of length $k$ will be 
+$\frac{n!}{2k \cdot (n-k)!} \cdot p^k$.\\\\
+Let $X$ be a random indicator variable that is 1 when a cycle exists of length $k$ and 0 when a cycle of that 
+length does not exist. It is given that each pair of vertices is adjacent with probability $p$, so the probability that 
+a cycle of length $k$ exists is $p^k$. By linearity of expectation, the expected number of cycles of length $k$ is equal 
+to the sum over all the values that $X$ can take. Because we want to know the number of sequences of length $k$ that 
+exists, order is important and repetitions are not desired. Therefore, the number of sequences of length $k$ is equal to 
+$$\frac{n!}{(n-k)!}$$
+Through linearity of expectation, we know that the product of the number of sequences times the probability of getting 
+a cycle of length $k$ will be equal to the expected number of cycles of length $k$:
+$$E(x)=\frac{n!}{(n-k)!} \cdot p^k$$
+However, because of the presence of cycles, we need to adjust this expression to avoid over-counting.
+These cycles can be walked through in $2k$ different ways. There are $k$ ways to traverse the cycle in a "forward" direction, 
+such as from $v_1$ to $v_2$ to $v_3$ to $v_1$ when $n=3$, because it is possible to use any of the vertices as the starting 
+point. Likewise, there are $k$ ways to traverse the cycle in a "backwards" direction since the same paths can be taken 
+in the opposite order. Therefore, the expected number of cycles of length $k$ will be 
+$$\frac{n!}{2k \cdot (n-k)!} \cdot p^k$$
+\noindent\textbf{(B):} We wish to show that the expected number of cycles of length $k$ will be at most 
+$\frac{n^k \cdot p^k}{2k}$\\\\
+This is the same as showing that 
+$$\frac{n!}{2k \cdot (n-k)!} \cdot p^k \le \frac{n^k \cdot p^k}{2k}$$
+After dividing common terms we are left with the inequality
+$$\frac{n!}{(n-k)!} \le n^k$$
+Note that the right-hand term consists of $k$ multiplications of $n$. While the numerator of the left-hand term 
+is a factorial that becomes $n$ terms once expanded, it is divided by $(n-k)!$ which ensures that there are also 
+$k$ multiplications on the left-hand side. This ensures that $\frac{n^k \cdot p^k}{2k}$ holds.\\\\
+\noindent\textbf{(C):} We wish to show that for $p=n^{-a}$, with $a > 1$, the limit of the probability that the 
+graph has at least one cycle of length $k$ is 0 as n goes to infinity.\\\\
+By taking the limit of $p$ as $n$ approaches infinity, we can determine the behavior of the function:
+$$\lim_{n \to +\infty} \frac{1}{n^a}=0$$
+We know that $a > 1$, so as $n$ approaches infinity the denominator grows larger and larger and 
+$\frac{1}{n^a}$ approaches 0. Since $p$ is a multiplicand of the expression for the probability that the graph 
+has at least one cycle of length $k$, this probability goes to 0 as well.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

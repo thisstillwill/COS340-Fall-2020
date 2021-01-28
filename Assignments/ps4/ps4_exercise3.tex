@@ -1,0 +1,55 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{4}            % Homework
+           {3}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3:}\\
+\noindent\textbf{(A):} We wish to find the number of ways we can color the vertices of a complete graph 
+$K_n$, where $n \ge 1$, when provided with $k$ different colors such that $k \ge n$.\\\\
+In a complete graph, each pair of vertices is connected by an edge. By the definition of a legal coloring, 
+each vertex in the complete graph must be a different color. Otherwise, a pair of adjacent vertices would 
+exist that share the same color. The specific coloring depends on which vertices are given which colors, 
+so order matters. In addition, there should be no repetition because the number of colors is at least as large as 
+the number of vertices. Therefore, because we are choosing how to assign $n$ vertices to $k$ colors, the number 
+of ways to color the graph is equal to
+$$\frac{k!}{(k-n)!}$$
+\noindent\textbf{(B):} We wish to show that the number of ways to color the tree $T_n$, with $n \ge 1$, is equal 
+to $k \cdot (k-1)^{n-1}$ when provided with $k \ge 2$ different colors.\\\\
+We can use an inductive approach. In the base case, where $n=1$, there is only a single vertex. With $k$ available 
+colors, there are simply $k$ ways to color this single vertex. This is equivalent to the value of 
+$k \cdot (k-1)^{1-1}=k$, so the predicate holds. If there are two vertices, than the root vertex can still be 
+colored in $k$ ways. By the definition of a tree, the second vertex only has one parent. Because the parent is 
+already using one of the available colors, the child vertex can only pick from among the remaining $k-1$ colors. 
+This means there are $k \cdot (k-1)$ ways to color the two vertices, which is equivalent to $k \cdot (k-1)^{n-1}$ 
+when $n=2$:
+$$k \cdot (k-1)^{2-1}=k \cdot (k-1)$$
+Let $k \cdot (k-1)^{n-2}$ represent the number of ways to color the tree at the $j$-th step before adding an additional 
+vertex to the tree, and assume that the predicate $P(j)$ holds for $n \ge 1$ vertices and $j=n$. At the 
+$j+1$-th step, an additional vertex is added to the tree. By the definition of a tree, no matter where this vertex is added it 
+will have an edge to exactly one parent. Because this parent vertex is already using one of the available colors, 
+the added vertex can only pick from among the remaining $k-1$ colors. If there are $k \cdot (k-1)^{n-2}$ ways to 
+color the graph at the $j$-th step, then the number of ways to color the graph at the $j+1$-th step is
+$$k \cdot (k-1)^{n-2} \cdot (k-1) = k \cdot (k-1)^{n-1}$$
+By weak induction, we have shown that the number of ways to color the graph is $k \cdot (k-1)^{n-1}$.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

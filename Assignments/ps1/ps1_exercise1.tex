@@ -1,0 +1,62 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{1}            % Homework
+           {1}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {None} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1:}\\
+We wish to prove
+$$P(n): T_n\le2^n$$
+for any nonnegative integer $n$.\\\\
+(Base Case) We first show $P(0)$, $P(1)$, and $P(2)$ are true, i.e. that the formula is valid when
+$n=0$, $n=1$, and $n=2$. If $n=0$, then
+$$T_0\le2^0$$
+$$T_0\le1$$
+By definition we are given $T_0=1$, so
+$$1\le1$$
+And $P(0)$ holds. If $n=1$, then
+$$T_1\le2^1$$
+$$T_1\le2$$
+By definition we are given $T_1=1$, so
+$$1\le2$$
+And $P(1)$ holds. If $n=2$, then
+$$T_2\le2^2$$
+$$T_2\le4$$
+By definition we are given $T_2=1$, so
+$$1\le4$$
+And $P(2)$ holds.\\\\
+(Inductive Step) let $k\ge3$ and suppose that that $P(j)$ is true for all $0\le j\le k$. Since $k\ge3$, then 
+$k-3\ge0$ and so we are assuming in particular that $P(k)$, $P(k-1)$, and $P(k-2)$ are all true. It 
+now remains to be shown following the inductive hypothesis that $P(k+1)$ is true. \\
+From the definition of the sequence we can write
+$$T_{k+1}=T_k+T_{k-1}+T_{k-2}$$
+Then following from our inductive hypothesis we can write
+$$T_{k+1}=T_k+T_{k-1}+T_{k-2}\le2^k+2^{k-1}+2^{k-2}$$
+Now the right-hand side of the inequality can be simplified as
+$$=\frac{1}{2}\cdot2^{k+1}+\frac{1}{4}\cdot2^{k+1}+\frac{1}{8}\cdot2^{k+1}$$
+$$=2^{k+1}\cdot(\frac{1}{2}+\frac{1}{4}+\frac{1}{8})$$
+$$=2^{k+1}\cdot(\frac{7}{8})$$
+We now have the full inequality written as
+$$T_{k+1}\le2^{k+1}$$
+Thus $P(k+1)$ is true. By Strong Induction we have proven that the inequality is valid for any 
+nonnegative integer $n$.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

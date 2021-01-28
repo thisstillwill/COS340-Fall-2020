@@ -1,0 +1,49 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{1}            % Homework
+           {3}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {None} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3:}\\
+We wish to prove that at a party of $n\ge2$ people there exist two people who have the same number
+of friends at the party.\\\\
+(Base Case) When $n=2$, there are only two people at the party. In the case that neither person has
+any friends at the party, by definition they are a pair that has the same number of friends (they 
+both have zero friends). In the case that one person has a friend at the party, the predicate is still true
+because by definition friendship is symmetric and not reflexive; both people know each other and so
+have the same number of friends at the party (both have one friend).\\\\
+(Proof) If everyone at the party is friends with at least one other person there, then for $n$ people the
+maximum number of friends a single person can have there is $n-1$ since by definition you cannot be 
+friends with yourself. This means the set
+$$\{1,2,3,\dots, n-1\}$$
+which has $n-1$ elements represents the possible numbers of friends at the party a person could have. 
+If there is someone at the party who is not friends with anyone, then the set representing the possible
+numbers of friends is
+$$\{0,1,2,\dots, n-2\}$$
+which has $n-1$ elements. The upper bound of $n-2$ in the set comes from there being $n-1$ other
+people at the party minus the one person no one is friends with. If there was another "party crasher" 
+with no friends at the party, we could stop because such a situation would produce a pair of people who 
+both have zero friends there.\\\\
+In either case, if there are $n$ people at the party and only $n-1$ possible numbers of friends a person 
+could have, then by the Pigeonhole Principle there will be two people with the same number of friends 
+at the party.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

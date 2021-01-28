@@ -1,0 +1,50 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{2}            % Homework
+           {4}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4:}\\
+We wish to prove or disprove that rolling two sixes if you know the first roll is a six is at least as likely as 
+rolling two sixes if you know that at least one of the rolls is a six.\\\\
+Let $P(A)$ be the probability the first roll is a six, and let $P(B)$ be the probability that the second roll is 
+a six. This means the probability of rolling two sixes is $P(A\cap B)$, because intuitively the intersection 
+where both the first roll is a six and the second roll is a six is just where both rolls are sixes. We can also 
+say that the probability of one of the rolls being a six is $P(A \cup B)$ since by the inclusion-exclusion 
+principle the union of two sets is their sum minus their intersection (with the intersection just being where both 
+rolls produce sixes).\\\\
+We can then write the inequality as
+$$P(A\cap B|A)\ge P(A\cap B|A \cup B)$$
+Using the formula for conditional probability, we can expand the terms on each side:
+$$\frac{P((A\cap B)\cap A)}{P(A)}\ge\frac{P((A\cap B)\cap (A\cup B))}{P(A\cup B)}$$
+On the left side, we know that $(A\cap B)\cap A$ is still $A\cap B$ and that on the right side that 
+$(A\cap B)\cap (A\cup B)$ is still $A\cap B$ so we have that
+\begin{align*}
+\frac{P(A\cap B)}{P(A)} & \ge\frac{P(A\cap B))}{P(A\cup B)}\\
+\frac{1}{P(A)} & \ge\frac{1}{P(A\cup B)}
+\end{align*}
+We can now see clearly that the left hand event (the probability of rolling two sixes given the first roll is 
+a six) is at least as likely as rolling two sixes given one of the rolls is a six. $A\cup B$ covers the entire 
+area that $A$ and $B$ do, which is larger than $A$ alone. This means that $\frac{1}{P(A)}$ is greater 
+than $\frac{1}{P(A\cup B)}$. At worst, if $A$ and $B$ intersect completely it would simply mean that 
+$\frac{1}{P(A)}=\frac{1}{P(A\cup B)}$.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{3}            % Homework
+           {5}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5:}\\
+We wish to prove $P(n)$, that a simple graph $G$ with $2n$ nodes with no triangles has at most $n^2$ 
+edges for $n\ge1$.\\\\
+(Base Case) We first show that the predicate holds when $n=1$. When $n=1$, we have $2\cdot1=2$ 
+nodes. The first base case is when the two nodes are disconnected, so the total number of edges is 0. 
+This is less than or equal to the maximum of $n^2 =1^2=1$ edge. The second base case is when the 
+two nodes have a single edge between them. The total number of edges is 1, which is still less than or 
+equal to the allowed maximum. No more edges could be added between the two vertices since $G$ is 
+a simple graph and no self loops or multiple edges are allowed.\\\\
+(Inductive Step) Let $n=k$ and suppose that $P(k)$ is true for $n\ge1$. It now remains to be shown 
+following the inductive hypothesis that $P(k+1)$ is true.\\\\
+Let the graph $G'$ represent the case for $P(k)$ where there are $2k$ nodes and a maximum of $k^2$ 
+edges, and let the graph $G$ represent the case for $P(k+1)$ where there are $2(k+1)=2k+2$ nodes and 
+a maximum of $(k+1)^2$ edges. We start by removing two nodes from $G$ such that there are now $2k$ 
+nodes left and any edge connected to those two nodes is also removed. This leaves us with $G'$, which 
+we assume (from our inductive hypothesis) does not have any cycles of length 3.\\\\
+We then add back the two removed nodes. The two nodes can have an edge between them, adding an 
+additional edge to the maximum of $k^2$ edges for $G'$. Each of the $2k$ original nodes in $G'$ can be 
+connected to either one or the other of the added nodes. This is because if one of the $2k$ nodes has 
+edges to both of the added nodes, and the added nodes are also neighbors, a triangle would be formed. 
+This means there is a total of $2k$ edges from the $2k$ nodes in $G'$ to the additional two nodes. The 
+maximum number of edges is then $k^2+2k+1=(k+1)^2$, which is the bound for the $2(k+1)$ nodes in $G$.\\\\
+By weak induction, we have proven that $G$ can have at most $n^2$ edges for $2n$ nodes without 
+having any triangles for $n\ge1$.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

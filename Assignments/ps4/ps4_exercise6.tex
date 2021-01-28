@@ -1,0 +1,48 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{4}            % Homework
+           {6}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 6:}\\
+We wish to show that for any possible valid placement of the pebbles, there is a subset of $2n$ pebbles 
+such that the row numbers are not the same and the column numbers are not the same for any pair of those 
+$2n$ pebbles.\\\\
+We can picture the board as a graph with $2n$ vertices representing the columns and $2n$ vertices representing 
+the rows. Edges between row and column vertices represent the squares where pebbles are placed. 
+It is not possible to have an edge between two column vertices or two row vertices, because otherwise 
+pebbles could overlap multiple columns or multiple rows.\\\\
+Let the set $L$ represent the $2n$ column vertices and let the set $R$ represent the $2n$ row vertices, such 
+that the union of $L$ and $R$ gives the total $4n^2$ vertices in the graph. By definition, this is a bipartite 
+graph. Let $S \subseteq L$, and let $N(S) \subseteq R$ be the set of neighbors of all the vertices in $S$.\\\\
+By Hall’s Marriage Theorem, there exists a perfect matching in the graph if and only if for
+every $S \subseteq L$ we also have $\abs{N(S)} \ge \abs{S}$.\\\\
+We know that the number of edges from $S$ to $N(S)$ is equal to the size of $S$ times the degree of its 
+vertices. The number of edges from $N(S)$ to $L$ is likewise equal to the size of $N(S)$ times the degree 
+of its vertices. Assume that $\abs{N(S)} < \abs{S}$. If this were true, the number of edges from $S$ would be greater than that 
+coming from $N(S)$. This is a contradiction, however, because we know that $S \subseteq L$ and so cannot 
+actually have more edges than the number coming from $N(S)$ to $L$. Therefore, we have that 
+$\abs{N(S)} \ge \abs{S}$ and by Hall's Marriage Theorem there is a perfect matching in the graph.\\\\
+If there is a perfect matching, then by definition the degree of each vertex is exactly 1. Therefore, accounting 
+for the  $2n$ columns and $2n$ rows there must be a subset of $2n$ pebbles such that the row numbers 
+are not the same and the column numbers are not the same for any pair of those $2n$ pebbles.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

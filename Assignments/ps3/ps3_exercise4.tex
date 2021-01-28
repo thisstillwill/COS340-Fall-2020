@@ -1,0 +1,38 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{3}            % Homework
+           {4}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4:}\\
+We wish to determine if there is an $\ell$-regular graph $G=(V,E)$ where $\ell$ is an odd positive integer 
+and $\abs{V}$ is also an odd positive integer for $\ell \ge 1$.\\\\
+The handshaking theorem states that 
+$$\sum_{v\in V}deg(V)=2\cdot \abs{E}$$
+If we had both an odd positive number of vertices and all vertices had degree $\ell$ that was also 
+odd positive, then the summation $\sum_{v\in V}deg(V)$ would be odd (an odd number added 
+odd times is still odd). However, we know that this summation must be equal to $2\cdot \abs{E}$ which 
+is always an even positive number.\\\\
+This is a contradiction, so by the handshaking theorem there is no $\ell$-regular graph $G=(V,E)$ with 
+$\abs{V}$ an odd positive integer for $\ell \ge 1$.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

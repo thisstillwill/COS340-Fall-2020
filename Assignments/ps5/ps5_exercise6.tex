@@ -1,0 +1,49 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{5}            % Homework
+           {6}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 6:}\\
+We wish to show that the HITTING-SET decision problem is NP-complete. To do so, it is necessary 
+to show that it is both in NP and that it is NP-hard.\\\\
+\noindent\textbf{1.} To show that the HITTING-SET decision problem is in NP, we can give a 
+polynomial time verification algorithm. For each of the $k$ elements in the candidate hitting set $H$, 
+we can go through each of the $m$ subsets of $A$. If a match is found (that is an intersection with one of 
+the elements in the current subset), that subset is marked as intersecting. If the number of matches equals 
+$m$, then we know that $H$ is a valid hitting set. Because each of the subsets of $A$ can up to $n$ elements 
+long, the time complexity is $O(k \cdot n \cdot m)$.\\\\
+\noindent\textbf{2.} To show that the HITTING-SET decision problem is NP-hard, we can show the 
+reduction VERTEX-COVER$\le_P$HITTING-SET. We start by considering an undirected graph 
+$G=(V,E)$. For each edge in $G$, we make a subset containing the two vertices connected by that edge. 
+$G$ only has a vertex cover of size $l$ if and only if each of the edge subsets in $G$ has a non-zero intersection 
+with the set of vertices that make up the proposed vertex cover. This is equivalent to saying that $G$ has a hitting set 
+of size $l$. We have successfully transformed the inputs of the VERTEX-COVER decision problem to those of the 
+HITTING-SET decision problem. Because the VERTEX-COVER decision problem is NP-complete, 
+we know that the HITTING-SET decision problem must then be NP-hard.\\\\
+Likewise, if we had a hitting set of size $k$ for a collection of subsets, with each subset 
+representing an edge between two vertices, we could construct a graph by adding an edge from each vertex 
+in the hitting set to its intersection with a vertex in the edge subsets. This would give us a valid vertex cover.\\\\
+Because we have shown that the HITTING-SET problem is in NP and is also NP-hard, we know that it 
+is NP-complete.
+ 
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{1}            % Homework
+           {4}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {None} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 4:}\\
+We wish to prove
+$$P(n): \textrm{There are always two sums that are equal}$$
+out of the row, column, and diagonal sums for a $n\times n$ board.\\\\
+(Base Case) We first show $P(1)$ is true, i.e. that the formula is valid when $n=1$. If $n=1$, then the
+table is made up of only a single entry. Because there is only one entry, the rows, columns, and 
+diagonals of the table are the same (they all cover only the single square). No matter what value the 
+entry has the sums will be equal and $P(1)$ holds.\\\\
+(Proof) There will always be $2n+2$ sums from an $n\times n$ board. This can be concluded from the
+observation that the two available diagonals is constant for all square boards, and that there are $n$ 
+rows and $n$ columns.\\\\
+We wish to choose two sums out of the $2n+2$ available sums from the board that are equal. This can
+be represented by
+$$\binom{(2n+2)+2-1}{2}=\binom{2n+3}{2}$$
+Because repetitions are allowed and the order is not important.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

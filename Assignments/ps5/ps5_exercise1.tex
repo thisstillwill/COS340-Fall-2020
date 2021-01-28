@@ -1,0 +1,46 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{5}            % Homework
+           {1}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1:}\\
+We wish to show that 4-colorability is NP-complete. To do so, it is necessary 
+to show that it is both in NP and that it is NP-hard.\\\\
+\noindent\textbf{1.} To show that 4-colorability is in NP, we can give a 
+polynomial time verification algorithm. For each vertex in the graph, all of the adjacent 
+vertices are checked and the number of unique colors is tracked. The graph is accepted if exactly four 
+colors are used and if no pair of adjacent vertices was found to share the same color. This process takes 
+time proportional to $O(n^2)$.\\\\
+\noindent\textbf{2.} It is given that 3-colorability is NP-complete. To show that 4-colorability is NP-hard, 
+we can show a reduction from the 3-colorability problem to the 4-colorability problem. We start by taking 
+an input graph $G$ that is known to be 3-colorable. To transform this input into one for 4-colorability, we
+can add a new vertex to $G$ that is connected to every other vertex to make the graph $G'$. Since $G$ 
+is 3-colorable, we know that the added vertex must be using a fourth color since it is connected to every 
+vertex in $G$ (and by definition of a graph coloring adjacent vertices cannot share the same color). $G'$ 
+is then 4-colorable if and only if $G$ is 3-colorable. Because 3-colorability is NP-complete, we know that 4-colorability 
+must then be NP-hard.\\\\
+Likewise, if $G'$ is 4-colorable we know that $G$ must be 3-colorable. This is because the added vertex in $G'$
+is the only vertex of its color, so the vertices in $G$ must be using the remaining three colors.\\\\
+Because we have shown that 4-colorability is in NP and is also NP-hard, we know that it is NP-complete.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

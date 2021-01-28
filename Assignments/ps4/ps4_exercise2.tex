@@ -1,0 +1,52 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{4}            % Homework
+           {2}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 2:}\\
+We wish to prove that the chromatic number of an interval graph is equal to its clique number.\\\\
+To begin, we will use a greedy algorithm to color the vertices of the graph such that each vertex is given 
+the first available color. The algorithm starts by selecting the first interval and giving that vertex one color. 
+The next interval is then considered, and if it intersects with the first interval it is given a different color. 
+In general, each interval in the graph will be assigned the first available color that has not already been 
+used in any of the other intervals that it intersects with. Intersections are found for a given interval by checking 
+each of the other intervals in the graph.\\\\
+With the graph colored, the first step is to prove that the chromatic number is at least as large as the clique 
+number. We can do this by contradiction, with the assumption that the chromatic number is actually less 
+than the clique number. It is given that the clique number of a graph is the number of vertices in the 
+largest complete subgraph of the graph. For a complete subgraph to exist in a legal coloring, each vertex 
+in the subgraph would need to be a different color. However, if the chromatic number is less than the 
+clique number it would would mean the total number of colors used is less than the size of the largest complete 
+subgraph. This is a contradiction, because it would allow adjacent vertices in the subgraph to share the same 
+color. Therefore, the chromatic number is at least as large as the clique number.\\\\
+The second step is to prove that the clique number is at least as large as the chromatic number. We can 
+do this by contradiction, with the assumption that the clique number is actually smaller than the chromatic 
+number. The size of the largest subgraph determines the minimum number of colors needed, 
+because nowhere else in the graph contains more vertices that are adjacent to each other. If the clique number is smaller, 
+it means that there are excess colors that are not used in the largest subgraph. This is a contradiction, because 
+by definition the chromatic number of a graph is the minimal number of colors in which the graph can be 
+colored. Therefore, the clique number is at least as large as the chromatic number.\\\\
+Because the chromatic number is at least as large as the clique number, and the clique number is at least 
+as large as the chromatic number, the chromatic number of an interval graph must equal its clique number.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

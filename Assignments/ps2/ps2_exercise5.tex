@@ -1,0 +1,51 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{2}            % Homework
+           {5}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5:}\\
+\noindent\textbf{A:}\\
+We wish to find the probability that an engine that tests as functioning properly actually malfunctions. We
+are given that the probability that the software determines the engine has an issue given that the engine 
+functions properly is 3\%, so the probability that the software does not determine that the engine has an 
+issue given that the engine functions properly is $100\%-3\%$ or 97\%. We are also given that the 
+probability that the software determines the engine functions properly given that the engine malfunctions 
+is 10\%, so the probability that the software finds a malfunction given the same condition is $100\%-90\%$ 
+or 90\%.\\\\
+Using the formula for conditional probability and the knowledge that 95\% of engines function properly, we have that
+\begin{align*}
+P(\textrm{malfunctions}|\textrm{tests properly}) & =\frac{P(\textrm{malfunctions}\cap\textrm{tests properly})}{P(\textrm{tests properly})}\\
+& = \frac{0.05*0.1}{0.05*0.1+0.95*0.97}\\
+& = \frac{0.05}{0.9265}\\
+& \approx0.54\%
+\end{align*}
+\noindent\textbf{B:}\\
+We wish to to find the probability that an engine that tests as it malfunctions actually functions properly. 
+Using the formula for conditional probability, we have that 
+\begin{align*}
+P(\textrm{functioning}|\textrm{tests malfunctions}) & =\frac{P(\textrm{functioning}\cap\textrm{tests malfunctions})}{P(\textrm{tests malfunctions})}\\
+& = \frac{0.95*0.03}{0.95*0.03+0.05*0.9}\\
+& = \frac{0.0285}{0.0735}\\
+& \approx38.78\%
+\end{align*}
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

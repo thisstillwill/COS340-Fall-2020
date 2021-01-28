@@ -1,0 +1,56 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+\usepackage{cancel}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{2}            % Homework
+           {1}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1:}\\
+We wish to show that
+$$\binom{a}{b}\cdot\binom{b}{c}=\binom{a}{c}\cdot\binom{a-c}{b-c}$$
+where $a \ge b \ge c \ge 0$ using an algebraic proof and a combinatorial proof.\\\\
+\noindent\textbf{(A):}\\
+For the algebraic proof we can use the formula
+$$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
+to expand each of the binomial coefficients and then cancel out matching terms:
+\begin{align*}
+\frac{a!}{b!(a-b)!}\cdot\frac{b!}{c!(b-c)!} & = \frac{a!}{c!(a-c)!}\cdot\frac{(a-c)!}{(b-c)!\cdot((a-c)-(b-c))!}\\
+\frac{a!}{b!(a-b)!}\cdot\frac{b!}{c!(b-c)!} & = \frac{a!}{c!(a-c)!}\cdot\frac{(a-c)!}{(b-c)!\cdot(a-b)!}\\
+\frac{\cancel{a!}}{\cancel{b!}\cancel{(a-b)!}}\cdot\frac{\cancel{b!}}{\cancel{c!}\cancel{(b-c)!}} & = \frac{\cancel{a!}}{\cancel{c!}\cancel{(a-c)!}}\cdot\frac{\cancel{(a-c)!}}{\cancel{(b-c)!}\cdot\cancel{(a-b)!}}\\
+1 & = 1
+\end{align*}
+We observe that both sides are equal so we have proven the equation algebraically.\\\\
+\noindent\textbf{(B):}\\
+For the combinatorial proof, we need to define a question that each side of the equation can separately answer.
+We can ask:\\\\
+\emph{You have $a$ balls. You wish to separate them into three piles of sizes $a-b$, $b-c$, and $c$ such that there 
+are no balls left over. How many ways can you do this?}\\\\
+\textbf{1.} Choose $b$ balls from $a$ leaving a pile of size $a-b$ and a pile of size $b$. Now choose $c$ balls from the 
+pile of size $b$, separating it into a pile of size $b-c$ and a pile of size $c$. You now have three piles of sizes $a-b$, $b-c$, and $c$. 
+The first action was done in $\binom{a}{b}$ ways while the second was done in $\binom{b}{c}$ ways, so you have the the left side of the equation
+in $\binom{a}{b}\cdot\binom{b}{c}$ ways.\\\\
+\textbf{2.} Choose $c$ balls from $a$ leaving a pile of size $a-c$ and a pile of size $c$. Now choose $b-c$ balls from the pile of size $a-c$, 
+separating it into a pile of size $b-c$ and a pile of size $a-c-(b-c)=a-b$ balls. You now have three piles of sizes $a-b$, $b-c$, and $c$. 
+The first action was done in $\binom{a}{c}$ ways while the second was done in $\binom{a-c}{b-c}$ ways, so you have the right side of the equation 
+in $\binom{a}{c}\cdot\binom{a-c}{b-c}$ ways.\\\\
+Both scenarios were able to answer the same question, so they are equal and we have proven the equation through combinatorial analysis.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

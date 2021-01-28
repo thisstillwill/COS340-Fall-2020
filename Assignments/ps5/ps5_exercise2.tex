@@ -1,0 +1,38 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{5}            % Homework
+           {2}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 2:}\\
+We wish to show the reduction PERFECT-MATCHING$\le_P$DISJOINT-PATHS.\\\\
+We start by considering a simple, bipartite graph $G$ as an input. To transform this input into one for 
+the disjoint paths decision problem, we can add two vertices $s$ and $t$ to make the graph $G'$. Each 
+vertex in part $A$ will be connected to $s$, and each vertex in part $B$ will be connected to $t$. $G'$ will 
+then have $k$ disjoint paths connecting $s$ and $t$ if and only if $G$ is a perfect matching where
+$\abs{A}=\abs{B}=k$. If, for example, $G$ did not have a perfect matching, the maximum possible number 
+of disjoint paths in $G'$ would be lower; a vertex would exist in $G$ without a matching, so $G'$ would 
+have paths that shared the same edge.\\\\
+Likewise, if $G'$ has $k$ disjoint paths the added vertices $s$ and $t$ and their edges can be ignored. 
+This returns the graph to $G$, which we know must have a perfect matching.
+ 
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

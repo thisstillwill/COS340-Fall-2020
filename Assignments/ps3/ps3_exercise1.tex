@@ -1,0 +1,47 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{3}            % Homework
+           {1}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 1:}\\
+\noindent\textbf{(A):} We wish to find the probability that a particular pigeonhole never has a pigeon of 
+a certain type. Each pigeon picks a pigeonhole at random and independently from one another, so a 
+given hole has a $\frac{1}{n}$ chance of being picked. The chance of a given hole \emph{not} being 
+picked, then, is equal to $1-\frac{1}{n}=\frac{n-1}{n}$. The probability then that the $n$ pigeons of a 
+particular type never pick the same pigeonhole is
+$$(\frac{n-1}{n})^n$$
+\noindent\textbf{(B):} We wish to find the expected number of pigeons of a particular type that fly away. 
+Let $X_i$ equal 1 if a pigeon flies away from hole $i$, and 0 if otherwise. By linearity of expectation, 
+we can say that $X$, the expected number of pigeons of a given type that fly away, is equal to the 
+summation over all the values that $X$ can take. From part A, we know that the probability that the $n$ 
+pigeons of a particular type never pick the same pigeonhole is $(\frac{n-1}{n})^n$. It is given that there 
+are $n$ pigeonholes, so the summation can be given as 
+$$X=\sum_{x=1}^{n}(\frac{x-1}{x})^x$$
+\noindent\textbf{(C):} We wish to find the expected number of pigeons that fly away. From part B, we 
+know that the expected number of pigeons of a particular type that fly away is equivalent to 
+$\sum_{x=1}^{n}(\frac{x-1}{x})^x$. It is given that there are $n$ types of pigeons, so this expectation 
+needs to be applied to each type of pigeon to find the total expected number of pigeons that fly 
+away. If $X$ is defined as the total number of pigeons that fly away, then
+$$X=n\cdot\sum_{x=1}^{n}(\frac{x-1}{x})^x$$
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

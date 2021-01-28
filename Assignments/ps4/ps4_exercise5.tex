@@ -1,0 +1,43 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{4}            % Homework
+           {5}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 5:}\\
+We wish to prove that the number of vertices in a graph is at most the product of the independence 
+number and the chromatic number.\\\\
+By the definition of a legal graph coloring, adjacent vertices will be of different colors. This means that 
+all vertices of the same color will be in an independent set, since they would not have edges in common. 
+If they did, then the graph coloring would be invalid since it would mean that adjacent vertices could be 
+the same color.\\\\
+It is also given that the independence number of a graph is the size of the maximum independent set of 
+the graph. Since each color corresponds to an independent set, we know that the size of each independent 
+set must be less than or equal to the independence number. Therefore, if the product of the independence number 
+and the chromatic number is the size of the largest independent set times the number of colorings in the graph, 
+we know that this product will always be greater than or equal to the sum of each independent set's size (which 
+is equal to the total number of vertices). It would be impossible for the number of vertices to be larger than this 
+product, because by definition the size of each set is bounded by the independence number.\\\\
+Therefore, the number of vertices in a graph is at most the product of the independence number and the 
+chromatic number.
+
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

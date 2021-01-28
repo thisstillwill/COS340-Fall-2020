@@ -1,0 +1,61 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{2}            % Homework
+           {2}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 2:}\\
+\noindent\textbf{A:}\\
+We wish to find the number of ways that $n\ge3$ balls can be distributed in $m\ge2$ boxes when the 
+balls are identical.\\\\
+We can start by thinking of each configuration as a bit vector in the form $BB||BBB$, where $B$ represents a 
+ball and $|$ the space between two consecutive boxes. With the fewest number of balls and boxes one configuration 
+would look like $BB|B$. We can observe that for $m$ boxes there are only $m-1$ box dividers in the bit vector. The 
+total length of the bit vector would then be $n+m-1$ which is the number of balls plus the number of dividers. Then if 
+we wish to find the number of ways that we can choose $n$ balls out of the $n+m-1$ total configuration length we have
+$$\binom{n+m-1}{n}$$
+\noindent\textbf{B:}\\
+We still wish to find the number of ways we can distribute the balls, but now not all balls need to be distributed. This means
+the length of the bit vector for each configuration is now $\le n+m-1$. As a result, we can choose \emph{up} to $n$ balls 
+out of the configuration length that results from the number of balls picked to distribute. The number of ways can then be expressed
+with the summation
+$$\sum_{k=0}^{k=n}\binom{k+m-1}{k}$$
+\noindent\textbf{C:}\\
+In this situation we know there are still $n\ge3$ identical balls that need to be distributed, but the second box is guaranteed to take at least 3 of
+those balls. The smallest configuration in this case would look like $|BBB$. We have 3 less balls balls to distribute now, so we are picking
+$n-3$ balls out of a bit vector of length $n+m-1-3$ to guarantee that the first three balls are accounted for. The number of ways to do this is
+$$\binom{n+m-4}{n-3}$$
+\noindent\textbf{D:}\\
+In this case the balls are pairwise different and the order that they are placed matters. When order matters and there should be no repetitions, 
+there are $\frac{n!}{(n-k)!}$ ways to choose $k$ out of $n$ objects. We are still choosing $n$ balls out of a configuration length of $n+m-1$, 
+so the number of ways to do so is
+$$\frac{(n+m-1)!}{(n+m-1-n)}=\frac{(n+m-1)!}{(m-1)}$$
+\noindent\textbf{E:}\\
+Like the previous case, the balls are pairwise different and the order they are placed matters. However,  only the balls 1, 2, 3 are placed in 
+the box with number 1. This means the total number of ways to distribute the balls is equal to the number of ways to distribute 3 balls into a 
+single box times the number of ways to distribute the other balls among the other boxes. The first action can be accomplished in $3!$ ways. 
+This means we now need to distribute 3 fewer balls among 1 fewer boxes. The length of the bit vector needs to be $n+m-1-3-1$ to account for 
+having one less box to work with and 3 fewer balls to distribute. We then choose $n-3$ balls out of the configuration length, or
+$$\frac{(n+m-1-3-1)!}{(n+m-1-3-1-n-3)!}=\frac{(n+m-1-3-1)!}{(m-2)!}$$
+So that the total number of ways to distribute the balls is
+$$3!\cdot\frac{(n+m-5)!}{(m-2)!}$$
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

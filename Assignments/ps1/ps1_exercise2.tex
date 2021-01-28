@@ -1,0 +1,49 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{1}            % Homework
+           {2}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {None} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 2:}\\
+We wish to prove
+$$P(n): (1+a)^n\ge1+an$$
+where $n\in\N$ and $a\ge-1$ is a real number.\\\\
+(Base Case) We first show $P(0)$ is true, i.e. that the formula is valid when
+$n=0$. If $n=0$, then
+$$(1+a)^0\ge1+a\cdot0$$
+$$1\ge1$$
+and $P(0)$ holds.\\\\
+(Inductive Step) Let $k\ge0$ and suppose that $P(n)$ is true when $n=k$. It now remains to be shown 
+following our inductive hypothesis that $P(k+1)$ is true. \\
+From the inequality given to us we can write $P(k+1)$ as
+$$(1+a)^{k+1}\ge1+a(k+1)$$
+$$(1+a)^k\cdot(1+a)^1\ge1+a(k+1)$$
+$$(1+a)^k\ge\frac{1+a(k+1)}{(1+a)}$$
+Now the right-hand side of the inequality can be simplified as
+$$=\frac{1+ak+a}{1+a}$$
+$$=\frac{1+a}{1+a}+\frac{ak}{1+a}$$
+$$=1+\frac{ak}{1+a}$$
+We now have the full inequality written as
+$$(1+a)^k\ge1+ak$$
+Thus $P(k+1)$ is true. By Weak Induction we have proven that the inequality is valid where 
+$n\in\N$ and $a\ge-1$ is a real number.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

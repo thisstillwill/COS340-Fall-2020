@@ -1,0 +1,43 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{2}            % Homework
+           {3}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 3:}\\
+\noindent\textbf{A:}\\
+We wish to find the number of different $m$-word sentences that can be constructed using an alphabet
+of $n$ letters where each of the letters appears exactly once. We note that when order is important and 
+there should be no repetitions that there will be $\frac{n!}{(n-n)!}=n!$ ways to arrange the letters. If there 
+are $m$ words in the sentence there are $m-1$ spaces in that sentence since there is no space before the first character. 
+The number of ways to put the spaces in the sentence is then $\binom{n-1}{m-1}$ since $n-1$ is the available length with 
+which to insert spaces between each word. Following this, the total number of combinations will be 
+$$n!\cdot\binom{n-1}{m-1}$$
+\noindent\textbf{B:}\\
+From the previous question, we know there are $n!\cdot\binom{n-1}{m-1}$ ways to use an alphabet
+of $n$ letters to construct different $m$-word sentences where each of the letters appears exactly once. Now 
+that we wish to create paragraphs, we know that the dividers are now either spaces or periods. Since this is a binary
+choice for each divider picked, and there are $m-1$ dividers in a paragraph, there are $2^{m-1}$ combinations of dividers
+for a paragraph. We can then multiply this by the number of ways to create different sentences to find that the number of
+different paragraphs is
+$$n!\cdot\binom{n-1}{m-1}\cdot2^{m-1}$$
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

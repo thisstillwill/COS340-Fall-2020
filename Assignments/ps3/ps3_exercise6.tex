@@ -1,0 +1,39 @@
+\documentclass[12pt,letterpaper]{cos340hw}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER + TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hwPrologue{3}            % Homework
+           {6}            % Problem number
+           {William Svoboda}  % Your name
+           {wsvoboda}   % Your NetID
+           %
+           % Below, write the collaborators. If no collaborators, type "None"
+           {Epi Torres-Smith, Leslie Kim} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YOUR WORK BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Problem 6:}\\
+We wish to show that a simple graph is 2-edge-connected if and only if it is connected and every edge 
+of the graph is traversed by a cycle.\\\\
+First, let us assume that we have a 2-edge-connected simple graph that is \emph{disconnected}. This 
+is a contradiction, because by definition a $k$-edge-connected graph must be connected.\\\\
+Let us then assume that we have a 2-edge-connected simple graph where at least one edge is 
+\emph{not} traversed by a cycle. By definition, a cycle is a path where the first and last vertices are 
+repeated (creating a loop). If there is an edge not traversed by a cycle, then it is possible to remove 
+that single edge and create a disconnection in that part of the graph (since the vertices that covered 
+that edge would no longer be in the path). This is also a contradiction, since by definition it should be 
+possible to remove $2-1=1$ edge from a 2-edge-connected graph without disconnecting it.\\\\
+Therefore, a simple graph is 2-edge-connected if and only if it is connected and every edge 
+of the graph is traversed by a cycle.
+
+%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
