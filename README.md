@@ -20,7 +20,7 @@ Each subfolder also contains a directory called `wsvoboda` with the actual submi
 
 ## Usage
 
-Compile each `.tex` source as normal (ex: with `pdflatex`).
+Compile each `.tex` source file as normal (ex: with `pdflatex`).
 
 ## License
 
