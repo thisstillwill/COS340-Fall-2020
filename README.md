@@ -4,7 +4,7 @@ This repository contains my assignment submissions for [COS 340 Reasoning About 
 
 ## Contents
 
-* `Assignments` - Directory containing the source files for each assignment. Individual problem sets are located in separate problem sets and denoted using the number of the assignment:
+* `Assignments` - Directory containing the source files for each assignment. Individual problem sets are located in subfolders and denoted using the number of the assignment:
 
 ```
 .
@@ -20,7 +20,7 @@ Each subfolder also contains a directory called `wsvoboda` with the actual submi
 
 ## Usage
 
-Compile each `.tex` source as normal (ex: with `pdflatex`).
+Compile each `.tex` source file as normal (ex: with `pdflatex`).
 
 ## License
 
